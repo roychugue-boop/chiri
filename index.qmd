@@ -1,7 +1,7 @@
 ---
-title: "Evaluación cuantitativa de la anotacion morfometrica digital en hojas de *Annona cherimola*"
+title: "Evaluación cuantitativa de la anotación morfométrica digital en hojas de *Annona cherimola*"
+output: html_document
 author: "Royber Chuquizuta, Hermes Galoc, Mayra Tarrillo, Erick Vasquez, Jorge Villa y Jhan Castro"
-format: html
 ---
 
 I. INTRODUCCIÓN
@@ -11,9 +11,9 @@ La chirimoya (Annona cherimola) es un frutal subtropical de la familia Annonacea
 Entre las herramientas de análisis digital disponibles, ImageJ es un programa de código abierto ampliamente utilizado que permite realizar mediciones de área, perímetro y otras características morfológicas en estructuras biológicas (Schneider et al., 2012). Por su parte, Digimizer es un software flexible que permite mediciones manuales precisas y detección automática de objetos (MedCalc Software, 2021). Estudios comparativos han demostrado que estos softwares presentan alta correlación con mediciones de referencia, con coeficientes de determinación superiores a 0.999 (Easlon & Bloom, 2014).
 Aunque ambas herramientas han sido validadas individualmente, investigaciones previas sugieren que pueden existir diferencias en su desempeño según la aplicación específica (Johnson & Wilson, 2019). 
 
-II. OBJETIVO
 
-Evaluar y contrastar la exactitud de las mediciones efectuadas en hojas de chirimoya mediante los programas Digimizer e Image J, con el propósito de identificar cuál software proporciona datos más fidedignos y representa la herramienta más confiable para este tipo de análisis.
+
+
 
 III.MATERIALES Y MÉTODOS
 
@@ -28,17 +28,12 @@ III.MATERIALES Y MÉTODOS
 3.2. Metodología empleada
 
 Paso 1: Instalación y apertura del software
-
 - Descargar e instalar Digimizer desde la página oficial (www.digimizer.com)
-
 - Familiarizarse con la interfaz: barra de herramientas superior, panel de trabajo central y ventana de resultados.
 
 Paso 2: Importación de imagen
-
 - Hacer clic en “Open Image > Fil”.
-
 - Navegar hasta la carpeta donde se encuentran las imágenes de las hojas de chirimoya.
-
 
 ![](Imag01.jpeg)
 
@@ -47,36 +42,25 @@ Paso 2: Importación de imagen
 ![](Imag02.jpeg)
 
 - La imagen aparecerá en el área de trabajo central del programa.
-
 - Verificar que la imagen se visualice correctamente y con buena calidad.
 
 Paso 3: Calibración de la Escala
 - Identificar la escala de referencia en la imagen (moneda).
-
 - Ubicar en la barra de herramientas “Unidad” y marcar con una línea los extremos de la moneda.
-
 - Seleccionar y digitar la escala (cm).
-
 - Verificar que el número de píxeles detectados sea correcto.
-
 - Hacer clic en "OK" para confirmar la calibración.
-
 - La calibración quedará guardada para esta sesión.
 
 ![](Imag03.jpeg)
 
 Paso 4: Ajustes de Visualización (Opcional)
-
 Para mejorar la precisión del trazado:
 
 1.  Usar el zoom para acercar la imagen: 
-
 Herramienta de zoom (+) en la barra de herramientas.
-
 2. Ajustar el brillo y contraste si es necesario: 
-
 - Ir a “Contraste” y mover los deslizadores hasta obtener mejor definición del borde de la hoja.
-
 - Aplicar cambios.
 
 Paso 5: Medición automática de parámetros
@@ -206,10 +190,7 @@ include_graphics(plot)
 ```
 
 V. CONCLUSIÓN
-
-
 La comparación de las mediciones realizadas en hojas de chirimoya mediante los programas Digimizer e ImageJ permitió identificar diferencias significativas entre los valores obtenidos por ambos softwares. Estos resultados evidencian que la elección de la herramienta digital influye directamente en la precisión de los datos morfométricos. En consecuencia, el software que presentó menor variabilidad y mayor consistencia en sus mediciones puede considerarse el más confiable para este tipo de análisis. Esta evaluación resalta la importancia de validar previamente los instrumentos digitales utilizados en investigaciones botánicas, a fin de garantizar la obtención de datos fidedignos y adecuados para la toma de decisiones científicas.
-
 
 VI. REFERENCIAS 
 
