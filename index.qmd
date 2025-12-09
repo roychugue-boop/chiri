@@ -9,7 +9,8 @@ I. INTRODUCCIÓN
 El análisis morfométrico de estructuras vegetales constituye una herramienta fundamental en estudios botánicos y agronómicos, permitiendo la cuantificación precisa de características foliares (Smith et al., 2018). Los métodos digitales reducen significativamente el tiempo de análisis y la variabilidad asociada al nivel de experiencia del investigador en comparación con las mediciones manuales tradicionales (Pérez & García, 2020).
 La chirimoya (Annona cherimola) es un frutal subtropical de la familia Annonaceae que presenta hojas simples, alternas, de forma ovoide a elíptica, con dimensiones aproximadas de 10 a 25 cm de largo (Lara et al., 2019). La caracterización morfométrica mediante descriptores como área del limbo, perímetro e índice de redondez ha demostrado ser útil para estudios de variabilidad genética (Rodríguez et al., 2021).
 Entre las herramientas de análisis digital disponibles, ImageJ es un programa de código abierto ampliamente utilizado que permite realizar mediciones de área, perímetro y otras características morfológicas en estructuras biológicas (Schneider et al., 2012). Por su parte, Digimizer es un software flexible que permite mediciones manuales precisas y detección automática de objetos (MedCalc Software, 2021). Estudios comparativos han demostrado que estos softwares presentan alta correlación con mediciones de referencia, con coeficientes de determinación superiores a 0.999 (Easlon & Bloom, 2014).
-Aunque ambas herramientas han sido validadas individualmente, investigaciones previas sugieren que pueden existir diferencias en su desempeño según la aplicación específica (Johnson & Wilson, 2019).
+Aunque ambas herramientas han sido validadas individualmente, investigaciones previas sugieren que pueden existir diferencias en su desempeño según la aplicación específica (Johnson & Wilson, 2019). 
+
 
 II. OBJETIVO
 
@@ -102,15 +103,22 @@ Ancho máximo (diámetro menor)
 - Para obtener medidas más exactas se puede utilizar la herramienta “Magic Contour Tool”
 
 Paso 6: Registro y anotación de medidas
+
 1. Verificar que todas las mediciones se muestren en la ventana de resultados
+
 2. Anotar los valores principales en una hoja Excel:
 - Código de la hoja
+
 - Bloque
+
 - Área (cm²)
+
 - Longitud máxima (cm)
+
 - Ancho máximo (cm)
 
 Paso 7: Guardar la Medición con Anotaciones (Opcional)
+
 Si deseas conservar el trazado realizado, se puede exportar como imagen o realizar captura.
 
 
