@@ -1,0 +1,124 @@
+---
+title: "Evaluación cuantitativa de la anotacion morfometrica digital en hojas de *Annona cherimola* 
+author: "Royber Chuquizuta, Hermes Galoc, Mayra Tarrillo, Erick Vasquez, Jorge Villa y Jhan Castro"
+format: html
+---
+
+I. INTRODUCCIÓN
+
+El análisis morfométrico de estructuras vegetales constituye una herramienta fundamental en estudios botánicos y agronómicos, permitiendo la cuantificación precisa de características foliares (Smith et al., 2018). Los métodos digitales reducen significativamente el tiempo de análisis y la variabilidad asociada al nivel de experiencia del investigador en comparación con las mediciones manuales tradicionales (Pérez & García, 2020).
+La chirimoya (Annona cherimola) es un frutal subtropical de la familia Annonaceae que presenta hojas simples, alternas, de forma ovoide a elíptica, con dimensiones aproximadas de 10 a 25 cm de largo (Lara et al., 2019). La caracterización morfométrica mediante descriptores como área del limbo, perímetro e índice de redondez ha demostrado ser útil para estudios de variabilidad genética (Rodríguez et al., 2021).
+Entre las herramientas de análisis digital disponibles, ImageJ es un programa de código abierto ampliamente utilizado que permite realizar mediciones de área, perímetro y otras características morfológicas en estructuras biológicas (Schneider et al., 2012). Por su parte, Digimizer es un software flexible que permite mediciones manuales precisas y detección automática de objetos (MedCalc Software, 2021). Estudios comparativos han demostrado que estos softwares presentan alta correlación con mediciones de referencia, con coeficientes de determinación superiores a 0.999 (Easlon & Bloom, 2014).
+Aunque ambas herramientas han sido validadas individualmente, investigaciones previas sugieren que pueden existir diferencias en su desempeño según la aplicación específica (Johnson & Wilson, 2019). 
+
+II. OBJETIVO
+
+Evaluar y contrastar la exactitud de las mediciones efectuadas en hojas de chirimoya mediante los programas Digimizer e Image J, con el propósito de identificar cuál software proporciona datos más fidedignos y representa la herramienta más confiable para este tipo de análisis.
+
+III.MATERIALES Y MÉTODOS
+
+3.1. Materiales
+
+- Softwares (ImageJ y Digimizer)
+
+- Hojas de chirimoya (25)
+
+- Laptop
+
+3.2. Metodología empleada
+
+Paso 1: Instalación y apertura del software
+- Descargar e instalar Digimizer desde la página oficial (www.digimizer.com)
+- Familiarizarse con la interfaz: barra de herramientas superior, panel de trabajo central y ventana de resultados.
+
+Paso 2: Importación de imagen
+- Hacer clic en “Open Image > Fil”.
+- Navegar hasta la carpeta donde se encuentran las imágenes de las hojas de chirimoya.
+
+![](chiri/Imag01.jpeg)
+
+1. Project setup
+```{r}
+source('https://inkaverse.com/setup.r')
+
+```
+
+2. Data import
+
+```{r}
+gs <- "https://docs.google.com/spreadsheets/d/1bEWYDjywiql8dtjfW-GCC5hBR3LoCxC0uV36kbXgaGY/edit?gid=0#gid=0" %>% 
+  as_sheets_id()
+
+fb <- gs %>% 
+  range_read(ss = .,sheet = "fb")
+```
+
+ Barplot area
+
+```{r}
+md <- aov(area ~ width*length + block, fb)
+anova(md)
+```
+
+
+
+```{r}
+p1 <- ggplot(fb, aes(x = width, y = length, color = area)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Width", y = "length")
+p1
+```
+
+Regresion lineal de width vs length, referente a los bloques
+
+```{r}
+p2 <- ggplot(fb, aes(x = width, y = length, color = block)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Width", y = "length")
+p2
+```
+
+Comparación de area y bloque
+
+```{r}
+p3 <- ggplot(fb, aes(x = block, y = area, fill = block)) +
+  stat_summary(geom = "bar", fun = mean) +
+  stat_summary(geom = "errorbar", fun.data = mean_se, width = 0.2) +
+  labs(x = "Block", y = "Area")
+p3
+```
+
+```{r}
+pt <- "chirimoya.jpeg" %>% 
+  image_read() %>% 
+  image_ggplot()
+
+
+plot <- list(p1, p2, p3) %>% 
+  plot_grid(plotlist = ., ncol = 2, labels = "auto") %>% 
+  plot_grid(plotlist = pt, ncol = 2, rel_widths = c(3, 1)
+            , labels = c("", "e")) %>% 
+  ggsave(plot = ., "Figura-1.jpg"
+         , units = "cm"
+         , width = 35
+         , height = 15
+         )
+
+include_graphics(plot)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
